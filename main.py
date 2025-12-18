@@ -28,9 +28,20 @@ async def on_ready():
     print(f'Custom activity successfully set!')
     print(f'Bot is now online and ready!')
     
-    # Sync slash commands automatically (Global sync can take up to 1 hour)
     try:
         synced = await bot.tree.sync()
         print(f'Synced {len(synced)} slash command(s)')
     except Exception as e:
         print(f'Failed to sync commands: {e}')
+        
+@bot.command()
+async def sync(ctx):
+    """Command to force sync slash commands"""
+    print("Syncing commands...")
+    try:
+        synced = await bot.tree.sync()
+        await ctx.send(f"Successfully synced {len(synced)} slash command(s)!")
+        print(f"Manually synced {len(synced)} commands")
+    except Exception as e:
+        await ctx.send(f"Failed to sync: {e}")
+        print(f"Failed to manual sync: {e}")
