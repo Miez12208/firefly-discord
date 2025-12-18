@@ -87,4 +87,4 @@ if __name__ == '__main__':
         except Exception as e:
             print(f'An error occurred: {e}')
     else:
-        print('Token not found! Make sure the .env file is created correctly.')
+        print('Token not found! Make sure the .env file is created correctly')
