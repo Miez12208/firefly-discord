@@ -1,1 +1,1 @@
-# firefly-discord
+# Firefly Discord Bot
