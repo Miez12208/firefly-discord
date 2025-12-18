@@ -22,7 +22,7 @@ async def on_ready():
     print(f'Connected to {len(bot.guilds)} server(s)')
     print('━' * 50)
     
-    activity = discord.Game(name="with Python 🐍")
+    activity = discord.Game(name="League of Legends")
     
     await bot.change_presence(status=discord.Status.online, activity=activity)
     print(f'Custom activity successfully set!')
